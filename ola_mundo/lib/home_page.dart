@@ -1,48 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:ola_mundo/app_controller.dart';
 
 class HomePage extends StatefulWidget {
-  // pode alterar algo quando o aplicativo esteja rodando
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
-  // o statefuwidget precisa de um estado
   @override
-  // ignore: no_logic_in_create_state
-  State<HomePage> createState() {
-    return HomePageState();
-  }
+  HomePageState createState() => HomePageState();
 }
 
 class HomePageState extends State<HomePage> {
   int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // importante :serve apra dar mais uma cara de app
       appBar: AppBar(
-        title: Text('Home Page (by keven )'),
+        title: Text('Home Page (by keven)'),
+        actions: [CustomSwitch()],
       ),
-
       body: Center(
-          child: GestureDetector(
-        child: Text(
-          'Contador: $counter',
-          style: TextStyle(fontSize: 50.0),
-        ),
-        onTap: () {
-          setState(() {
-            counter++;
-          });
-        },
-      )),
-
+        child: CustomSwitch(),
+      ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           setState(() {
             counter++;
           });
         },
       ),
+    );
+  }
+}
+
+class CustomSwitch extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: AppController.instance.isDarkTheme,
+      onChanged: (value) {
+        AppController.instance.changeThame();
+      },
     );
   }
 }
