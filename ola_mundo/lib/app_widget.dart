@@ -3,6 +3,8 @@ import 'package:ola_mundo/app_controller.dart';
 import 'package:ola_mundo/home_page.dart';
 
 class AppWidget extends StatelessWidget {
+  const AppWidget({super.key});
+
   // final String title; // Construtor
   // const AppWidget({super.key, required this.title}); // automaticamente e criado
 

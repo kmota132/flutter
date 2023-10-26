@@ -15,10 +15,10 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page (by keven)'),
-        actions: [CustomSwitch()],
+        title: const Text('Home Page (by keven)'),
+        actions: const [CustomSwitch()],
       ),
-      body: Center(
+      body: const Center(
         child: CustomSwitch(),
       ),
       floatingActionButton: FloatingActionButton(
@@ -34,6 +34,8 @@ class HomePageState extends State<HomePage> {
 }
 
 class CustomSwitch extends StatelessWidget {
+  const CustomSwitch({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Switch(

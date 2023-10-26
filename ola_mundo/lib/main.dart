@@ -12,5 +12,5 @@ import 'app_widget.dart';
 //         style: const TextStyle(color: Colors.white, fontSize: 50.0),
 //       ),
 main() {
-  runApp(AppWidget());
+  runApp(const AppWidget());
 }
